@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+
+    <title>心ほどける、春のぬくもり。</title>
+</head>
+<style>
+
+    body {
+        animation: fadein 2s forwards;
+        background: url("home.jpg");
+    }
+
+    @keyframes fadein {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    
+    #headerh1 {
+        width: 100vw;
+        height: 55vw;
+        margin: calc(-50vw + 50%);
+        background-image: url("welcome spring.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        background-color: hotpink;
+        margin-top: 6px;
+        border: 3px solid aliceblue;
+	    border-top: none;
+		border-bottom: none;
+        margin: calc(-50vw + 50%);
+        padding: 0;
+
+    }
+
+    nav ul li {
+        flex: 1;
+        text-align: center;
+        width: 150px;
+    }
+
+    nav ul li:nth-of-type(2) {
+		border-left: 3px solid aliceblue;
+		border-right: 3px solid aliceblue;
+	}
+
+    nav ul li a {
+		display: block;
+        line-height: 45px;
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: 25px;
+        text-align: center;
+        width: 100%;
+        font-family: 'Noto Sans JP', sans-serif;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+        transform: translateY(-5px);
+        color: white;
+        font-size: 27px;
+        background-color:mediumvioletred;
+    }
+
+    
+
+    .headerLogo {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: lighter;
+        font-size: 3vw;
+        color: whitesmoke;
+        text-align: center;
+        text-shadow: 0.5px 0.5px 3px gray ;
+        margin: 0 auto;
+        margin-top: 46%;
+        
+    }
+
+
+    .sakura{
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        width: 25px;
+        height: 30px;
+        opacity: 0.8;
+        animation: fall 5s linear infinite;
+
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) translateX(20px) rotate(360deg); opacity: 0; }
+    }
+
+    #musicButton {
+        position: fixed;
+        background-color: aliceblue;
+        bottom: 20px;
+        right: 0;
+        border: 0;
+        padding-top: 4px;
+        padding-right: 20px;
+        cursor: pointer;
+        transition: transform 0.25s ease 0s;
+    }
+
+    #musicButton:hover {
+        transform: scale(1.15,1.15);
+        background-color: rgb(209, 233, 255);
+    }
+
+    #buttonImage {
+        width: 20px;
+        height: 20px;
+        padding-right: 20px;
+    }
+
+    #volume {
+        width: 20px;
+    }
+
+    #Topbutton {
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        background-color: hotpink;
+        color: whitesmoke;
+        font-size: 15px;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 90%;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #Topbutton.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-5px);
+    }
+
+    #Topbutton:hover {
+        background-color: rgb(255, 70, 163);
+        transform: scale(1,1);
+    }
+
+    #yajirusi {
+        width: 15px;
+    }
+    
+    #HELLO {
+        color: brown;
+        text-align: center;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 55px;
+        margin-top: 50px;
+        margin-bottom: 0;
+        border: 5px dashed brown;
+        border-left: none;
+        border-right: none;
+        background-color: rgba(230, 230, 250,0.5);
+    }
+    
+
+    @keyframes floatText {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .HOME-p {
+        font-family: 'Noto Sans JP', sans-serif;
+        text-align: center;
+        color: brown;
+        line-height: 200px;
+        font-size: 25px;
+        animation: floatText 1s ease-in-out;
+    }
+
+    .HELLOIcon {
+        width: 35px;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 2px;
+    }
+
+    #homeMark01 {
+        background: linear-gradient(transparent 60%, pink 0%);
+    }
+
+    #homeMark02 {
+        background: linear-gradient(transparent 60%, pink 0%);
+    }
+
+    #Haru {
+        background-color: hotpink;
+        color: aliceblue;
+        padding: 15px;
+        width: 20%;
+        border-radius: 100vh;
+        border: none;
+        font-size: 20px;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin: auto;
+        margin-bottom: 5px;
+        transition: all 0.25s ease-in-out;
+    }
+
+    #Haru:hover {
+        background-color: mediumvioletred;
+        text-shadow: 2px 2px 3px pink;
+        cursor: pointer;
+    }
+
+    #Haru:active {
+        background-color: darkred;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    #tyui {
+        text-align: center;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: brown;
+        font-weight: bold;
+        margin-bottom: 2px;
+        margin-right: 8px;
+
+    }
+
+    #wrap {
+        display: flex;
+        list-style: none;
+    }
+
+    .h2design {
+        font-size: 60px;
+        font-style: italic;
+        font-family: 'Nico Moji';
+        letter-spacing: 1px;
+        color: aliceblue;
+        -webkit-text-stroke: 1px brown;
+        text-shadow: -4px 3px 0 yellow, -8px 6px 0 mediumturquoise;
+        text-align: center;
+        line-height: 150px;
+    }
+
+    .syasin {
+        width: 50%;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 2px 2px 3px gray;
+    }
+
+    .syasinCenter {
+        text-align: center;
+    }
+
+    .tubuyaki {
+        text-align: left;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: darkred;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+        letter-spacing: 1px;
+        display: inline-block;
+    }
+
+    .tubuyakiCenter {
+        text-align: center;
+        display: block;
+    }
+
+    .komidasi {
+        text-align: center;
+        line-height: 140px;
+        font-family: 'Nico Moji';
+        font-size: 40px;
+        text-shadow: 2px 2px 3px yellow;
+    }
+
+    .komidasiMark {
+        background: linear-gradient(transparent 60%,mediumturquoise 50%);
+    }
+
+    .Uguisu {
+        background-color: limegreen;
+        color: aliceblue;
+        padding: 15px;
+        width: 20%;
+        border-radius: 60vh;
+        border: none;
+        font-size: 15px;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .Uguisu:hover {
+        background-color: yellowgreen;
+        text-shadow: 2px 2px 3px lime;
+        cursor: pointer;
+    }
+
+    .Uguisu:active {
+        background-color: green;
+    }
+
+    .h4koramu {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        color: #D95F76;
+        padding: 10px 20px;
+        background: #FFEEF3;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .h4koramu:hover {
+        box-shadow: 0 6px 12px rgba(255, 105, 180, 0.6);
+        transform: translateY(-3px);
+    }
+
+    .poem {
+        background-color: lightcoral;
+        color: aliceblue;
+        padding: 15px;
+        width: 20%;
+        border-radius: 60vh;
+        border: none;
+        font-size: 18px;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .poem:hover {
+        background-color: salmon;
+        text-shadow: 2px 2px 3px magenta, -3px -3px 5px darkorange;
+        cursor: pointer;
+    }
+
+    .poem:active {
+        background-color: plum;
+    }
+
+    #poem {
+        text-align: center;
+        line-height: 200px;
+        font-size: 35px;
+        font-family: "Sawarabi Gothic";   
+    }
+
+    .first {
+        color: salmon;
+        font-weight: bold;
+        letter-spacing: 4px;
+        margin-right: 8px;
+        text-shadow: 2px 2px 4px rgba(255, 160, 122, 0.6);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .second {
+        color: cadetblue;
+        font-weight: bold;
+        letter-spacing: 4px;
+        margin-right: 8px;
+        text-shadow: 2px 2px 4px rgba(95, 158, 160, 0.6);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .third {
+        color: violet;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-shadow: 2px 2px 4px rgba(238, 130, 238, 0.6);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+    } 
+
+
+
+    footer {
+    background-color: #D95F76;
+    display: flex;
+    padding: 10px 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: calc(-50vw + 50%);
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+
+
+    }
+
+    .footernav {
+        font-size: 20px;
+        color: aliceblue;
+        font-weight: bold;
+        border-right: 2px solid aliceblue;
+        padding-right: 30px;
+        margin-right: 60px;
+    }
+
+    .ulF {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+    }
+
+    .ulF li {
+        margin: 0 15px;
+        position: relative;
+    }
+    
+    .ulF li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .ulF a:hover {
+        color: lightpink;
+    }
+
+    .submenu {        
+        list-style: none;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .submenu li a {
+        font-size: 14px;
+    }
+
+    #wrap {
+        display: flex;
+        align-items: center;
+        line-height: 30px;
+    }
+
+    small {
+        background-color: mediumvioletred;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-top: 3px;
+        padding-bottom: 1px;
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-top: 15px;
+
+    }
+
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+
+
+
+
+    
+
+
+</style>
+<body>
+    <button id="musicButton" style="z-index:10000 "><img src="start.png" id="buttonImage"><img src="volumeoff.png" id="volume"></button>
+    <button id="Topbutton" style="z-index:10000"><img src="yajirusi.png" id="yajirusi"></button>
+    <header>
+        <h1 id="headerh1">
+            <p class="headerLogo">↓<br>SCROLL DOWN</p>
+            <img src="sakura01.png" class="sakura" style="left: 20%; animation-duration: 6s; animation-delay: 0s;">
+            <img src="sakura02.png" class="sakura" style="left: 40%; animation-duration: 4s; animation-delay: 1s;">
+            <img src="sakura01.png" class="sakura" style="left: 60%; animation-duration: 5s; animation-delay: 2s;">
+            <img src="sakura02.png" class="sakura" style="left: 80%; animation-duration: 7s; animation-delay: 3s;">
+            <img src="sakura01.png" class="sakura" style="left: 10%; animation-duration: 3s; animation-delay: 4s;">
+            <img src="sakura02.png" class="sakura" style="left: 90%; animation-duration: 4.5s; animation-delay: 5s;">
+        </h1>
+    </header>
+    <div class="sticky">
+        <nav>
+            <ul> 
+                <li><a href="haru.html">Home</a></li>
+                <li><a href="#ハルコラム">ハルコラム</a></li>
+                <li><a href="#ハルポエム">ハルポエム</a></li>
+            </ul>
+        </nav>
+    </div> 
+    <main>
+        <h1 id="HELLO"><img src="sakuraicon.png" class="HELLOIcon">HELLO!<img src="sakuraicon.png" class="HELLOIcon"></h1>
+        <section>
+            <h2 class="HOME-p"><span id="homeMark01">ようこそ、このページへ。<br>まだ少し肌寒い日もありますが、春はもうすぐそこ。<br>ふんわり舞う桜の花びらとともに、ひと足早い春の癒やしをお届けします。</span></h2>
+            <h2 class="HOME-p"><span id="homeMark02">どうぞ、ゆっくりと春の空気を感じていってくださいね。</span></h2>
+            <p id="tyui">※音が出ます</p>
+            <div class="buttons">
+                <button onclick="Bird();" id="Haru">春を感じる</button>
+            </div>    
+        </section>
+        <section>
+            <h2 class="h2design" id="ハルコラム">ハルコラム</h2>
+            <div class="syasinCenter">
+                <img src="sakura.jpg" class="syasin">
+            </div>
+            <div class="tubuyakiCenter">
+                <p class="tubuyaki">
+                    まだまだ寒暖差の大きい日々が続きますが、みなさんいかがお過ごしでしょうか。<br>
+                    暦の上では立春を迎え、梅や早咲きの桜はいよいよ見頃を迎えていますね。<br>
+                    みなさんは春と聞いて何を思い浮かべますか？<br>
+                    桜、つくし、鳥のさえずり、入学式、卒業式、新生活、花粉……。<br>
+                    最後の単語は考えなかったことにしましょう。（笑）<br>
+                    このハルコラムでは、小話をいくつかあげています。是非読んでみてくださいね。
+            </p>
+            </div>
+            <article>
+                <h3 class="komidasi" id="ウグイスのさえずり"><span class="komidasiMark">ウグイスのさえずり</span></h3>
+                <div class="syasinCenter">
+                    <img src="uguisu.jpg" class="syasin">
+                </div>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        春を代表する鳥といえば、真っ先に思いつく鳥はウグイス、という方が多いのではないでしょうか。<br>
+                        ウグイスは早春に鳴き始めるので、「春告鳥（はるつげどり）」とも呼ばれているそうです。<br>
+                        また日本三鳴鳥（さえずりが美しい鳥三選）の一種だそうで「ホーホケキョ」という綺麗な鳴き声が特徴としてありますよね。<br>
+                        そんなウグイスの美しいさえずりですが、私はある日こんなウグイスと遭遇しました。<br>
+                    </p>
+                    <div class="buttons">
+                        <button onclick="nazoUguisu();" class="Uguisu">妙なウグイス</button><br>
+                    </div>
+                    <p class="tubuyaki">
+                        ん？なんか変だな……。<br>
+                        もう一度注意深く聞き取ってみようと耳を澄ませると、「ホーーー……。」<br>
+                        ……終わりかい！思わず私は道ばたの石ころにけつまずきそうになりました。<br>
+                        結局想像していた綺麗な鳴き声は聞けずじまいで終わってしまったワケですが、なんとウグイスは、<br>
+                        あの理想の鳴き声になるまで、若鳥の時に聞いた他のウグイスを真似して練習に練習を重ねているのだそう！<br>
+                        つまり、あの美しいさえずりは、ウグイスの並々ならぬ努力の結果なのですね……。<br>
+                        そう思ったら、練習段階のつたない鳴き声も愛おしく感じ始めました。<br>
+                        みなさんも、もしウグイスに遭遇したら、耳を澄ませてみると面白いですよ。<br>
+                        ……ちなみに、ウグイスは小さい時に聞いた周りの大人たちのウグイスのさえずりを参考にするみたいなので、<br>
+                        その個体が上手くないと、みんな妙な鳴き方になるらしいです。それはそれで歯がゆい思いをしながら聞いてみたいですね。
+                    </p>
+                    <div class="buttons">
+                        <button onclick="Uguisu();"  class="Uguisu">ウグイス</button>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3 class="komidasi" id="サクラのまめちしき"><span class="komidasiMark">サクラのまめちしき</span></h3>
+                <div class="syasinCenter">
+                    <img src="sakuramame.jpg" class="syasin">
+                </div>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        日本の四季、春で欠かせないものといえば桜ですよね。<br>
+                        蕾からぽん、ぽんと花を咲かせて、満開になったかと思えば、<br>
+                        散り際は儚く散っていく姿は、昔から様々な人に思いを馳せられたことでしょう。<br>
+                        その中でも、特に有名な桜、「ソメイヨシノ」。<br>
+                        江戸後期には誕生し、今から150年〜200年程前だそうです。<br>
+                        今では全国に３億本もあるのだとか。人間の３倍の数ですね。<br>
+                        そんなソメイヨシノですが、なんとその全てが接ぎ木で増やされたクローンで、<br>
+                        基本的に、全く同じ遺伝子を持っているみたいです。<br>
+                        ソメイヨシノは、エドヒガンとオオシマザクラの掛け合わせで生まれましたが、<br>
+                        再度ソメイヨシノを作ろうと交配を行っても、同じものは生まれなかったそう。<br>
+                        今でこそ公園や神社、色々なところで必ずと言って良いほど見かけるソメイヨシノは、<br>
+                        初めは１本の桜の木から全国へ何千本、何万本と広がっていったのだと思うと、なんだか感慨深いものがありますね。<br>
+                        今や桜は日本を象徴する花となり、海外から美しい日本の桜を一目見ようと、沢山の観光客がやってくる時代になりました。<br>
+                        この機会に皆さん是非、日本の魅力のひとつである、美しい桜の花をあらためてお花見してみてくださいね。
+
+                    </p>
+
+                </div>
+            </article>
+            <article>
+                <h3 class="komidasi" id="ハルすいーつ"><span class="komidasiMark">ハルすいーつ</span></h3>
+                <div class="syasinCenter">
+                    <img src="okasi.jpg" class="syasin">
+                </div>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        春は、桜やいちご、新茶など旬の食材が豊富で、スイーツも彩り豊かですよね。<br>
+                        ここでは小さな豆知識を添えて春ならではの美味しいスイーツを紹介します！<br>
+                        <br>
+                    </p>
+                </div>
+                        <h4 class="h4koramu">桜餅</h4>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        春の和菓子といえば、桜餅！<br>
+                        実は関東と関西で違いがあるんです。<br>
+                        関東風（長命寺桜餅）ではクレープのような薄い生地であんこを包むのに対して、<br>
+                        関西風（道明寺桜餅）は餅米を使った粒々感のある生地であんこを包むのだそう！<br>
+                        どちらも桜の葉の香りが特徴的ですね。<br>
+                        <br>
+                    </p>
+                </div>
+                        <h4 class="h4koramu">よもぎ餅（草餅）</h4>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        春に芽吹くよもぎを使った和菓子。<br>
+                        よもぎの爽やかな香りとほのかな苦みが特徴であんこ入りも人気ですよね！<br>
+                        昔からよもぎは「邪気を払う」とされていて、健康食としても親しまれています。<br>
+                        ちなみに、よもぎ餅独特のあの香りは“シネオール”という成分で、リラックス効果があり、<br>
+                        血行促進やデトックス作用があるとか。春のデトックスにぴったりのスイーツですね！<br>
+                        <br>
+                    </p>
+                </div>
+                        <h4 class="h4koramu">いちご大福</h4>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        もちもちの大福の中に、甘酸っぱいいちごが入った大人気の和菓子。<br>
+                        最近では白あんバージョンやチョコ、生クリームが入ったものまで、<br>
+                        様々なアレンジが加えられていますよね。<br>
+                        そんないちご大福ですが、比較的新しいお菓子で、誕生したのは1980年代。<br>
+                        諸説ありますが、東京都の和菓子店さんが発祥だとか。<br>
+                        それ以前は「大福にフルーツを入れる」という発想はなかったため、画期的なスイーツだったとか！<br>
+                        <br>
+                    </p>
+                </div>
+                        <h4 class="h4koramu">桜スイーツ</h4>
+                <div class="tubuyakiCenter">
+                    <p class="tubuyaki">
+                        ほんのり塩気のある桜の葉を使ったなめらか桜プリンや、<br>
+                        桜風味のスポンジに、生クリームとあんこを巻いた和洋折衷スイーツの桜ロールケーキ、<br>
+                        また、桜ラテや桜シフォンケーキなどもカフェで非常に人気ですよね。<br>
+                        そんな桜スイーツに欠かせないものとして桜の香りがありますが、あの桜独自の香りは、<br>
+                        桜の葉や花に含まれる「クマリン」という成分が関係しています。<br>
+                        このクマリンは、桜餅の葉っぱや桜ラテの風味のもと。<br>
+                        桜の葉を塩漬けにすると、酵素の働きでクマリンが増え、より香りが引き立ちます。<br>
+                        <br>
+                        春は、桜・いちご・よもぎなど、季節を感じる食材が豊富ですね。<br>
+                        春期間限定のスイーツも多いので、お花見やティータイムにぜひ楽しんでみてくださいね！<br>
+                        私も季節限定のいちごパフェを探す旅に出たいと思います。
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section>
+            <h2 class="h2design" id="ハルポエム">ハルポエム</h2>
+            <div class="buttons">
+                <button class="poem" onclick="generatePoem()">ポエムを作る</button>
+            </div>
+            <p id="poem">
+                <span class="first">ここに</span>
+                <span class="second">詩が</span>
+                <span class="third">表示されるよ！</span>
+            </p>
+        </section>
+    </main>
+    <footer id="footer">
+        <div id="wrap">
+            <p class="footernav">Welcome to spring</p>
+            <ul class="ulF">
+                <li class="LiF"><a href="haru.html">Home</a></li>
+                <li class="LiF"><a href="#ハルコラム">春コラム</a>
+                    <ul class="submenu">
+                        <li class="liF"><a href="#ウグイスのさえずり">ウグイスのさえずり</a></li>
+                        <li class="liF"><a href="#サクラのまめちしき">サクラのまめちしき</a></li>
+                        <li class="liF"><a href="#ハルすいーつ">ハルすいーつ</a></li>
+                    </ul>
+                </li>
+                <li class="LiF"><a href="#ハルポエム">ハルポエム</a></li>
+            </ul>
+        </div>
+        <small>(C)yuu</small>
+    </footer>
+    
+
+
+</body>
+<script>
+    const Topbutton = document.getElementById("Topbutton");
+
+
+    const bgm1 = new Audio();
+    bgm1.src = "bgm1.mp3";
+
+    const SE1 = new Audio();
+    const SE2 = new Audio();
+    const SE3 = new Audio();
+    const SE4 = new Audio();
+    const SE5 = new Audio();
+    const SE6 = new Audio();
+    const SE7 = new Audio();
+
+    SE1.src = "ホトトギス.mp3";
+    SE2.src = "メジロ.mp3";
+    SE3.src = "ヒヨドリ1.mp3";
+    SE4.src = "カッコウ.mp3";
+    SE5.src = "アオジ.mp3";
+    SE6.src = "なぞウグイス.mp3";
+    SE7.src = "ウグイス.mp3";
+
+    const Haru = document.getElementById("Haru");
+
+    function Bird() {　//ランダム鳥のさえずりボタン
+        let B = Math.floor(Math.random() * 5);
+        if (B === 0) {
+            SE1.play();
+            SE1.volume = 0.3;
+        }else if (B === 1) {
+            SE2.play();
+            SE2.volume = 0.3;
+        }else if (B === 2) {
+            SE3.play();
+            SE3.volume = 0.3;
+        }else if (B === 3) {
+            SE4.play();
+            SE4.volume = 0.3;
+        }else {
+            SE5.play();
+            SE5.volume = 0.3;
+        }
+    }
+
+    function nazoUguisu() { //コラムウグイスのさえずり
+        SE6.play();
+        volume = 0.3;
+    }
+
+    function Uguisu() {
+        SE7.play();
+        volume = 0.3;
+    }
+
+    
+    document.getElementById("musicButton").addEventListener("click", function() { //音楽オンオフボタン制御
+        let img = document.getElementById("buttonImage");
+        let imeV = document.getElementById("volume");
+        
+        if (img.src.includes("start.png")) {
+            img.src = "stop.png";
+            bgm1.loop = true;
+            bgm1.play();
+            bgm1.volume = 0.05;
+            imeV.src = "volumeon.png";
+        } else {
+            img.src = "start.png";
+            bgm1.pause();
+            imeV.src = "volumeoff.png";
+        }
+    });
+
+
+    window.addEventListener("scroll", function() { //topボタン制御
+        if (window.scrollY > 200) {
+            Topbutton.classList.add("show");
+        } else {
+            Topbutton.classList.remove("show");
+        }
+    });
+
+    Topbutton.addEventListener("click", function() { //ページスクロールのなめらかさ
+        window.scrollTo({ top:0, behavior: "smooth"});
+    });
+
+    function generatePoem() { //ポエム部分のランダム制御
+        let first = [
+        "桜の風", "春の陽", "淡い夢", "優しい雨", "揺れる花びら", "朝露の輝き", "そよ風のささやき",
+        "光る雫", "桃色の空", "草木の目覚め", "優しき春風", "鳥のさえずり", "花の香り", "蝶の舞", "霞む森"
+    ];
+    
+    let second = [
+        "そっと触れる", "きらめく朝", "ゆらめく想い", "静かに揺れる", "風に舞う", "虹色に染まる",
+        "甘く香る", "穏やかに流れる", "心に溶ける", "夢の中に咲く", "淡く溶ける", "希望を運ぶ",
+        "遠く響く", "やわらかに包む", "そよぐ空気"
+    ];
+    
+    let third = [
+        "新しい季節", "光る世界", "思い出の中", "淡い記憶", "未来へと続く", "心の扉", "優しい時間",
+        "春の訪れ", "遥かなる空", "秘密の庭", "桜色の道", "やさしい涙", "夢の続きを", "儚い奇跡",
+        "暖かな光"
+    ];
+        let poemFirst = first[Math.floor(Math.random() * first.length)];
+        let poemSecond = second[Math.floor(Math.random() * second.length)];
+        let poemThird = third[Math.floor(Math.random() * third.length)];
+
+        document.getElementById("poem").innerHTML = 
+            `<span class="first">${poemFirst}</span>` + 
+            `<span class="second">${poemSecond}</span>` + 
+            `<span class="third">${poemThird}</span>`;
+    }
+
+</script>
+</html>
